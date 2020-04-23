@@ -31,6 +31,16 @@
   <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
 
   <link rel="stylesheet" href="css/style.css">
+  
+  
+  
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 		<script>
+ 		$(document).on("click", ".btn-primary", function () {
+	    var itemid= $(this).attr('data-item');
+	    $("#lineitem").attr("action","delete-placement-notice?"+itemid)
+	 	});
+ 		</script>
 
 
 
@@ -152,14 +162,17 @@
                     <h5 class="card-title">${notice.placementCompanyName}</h5>
                     <p class="card-text">${notice.companyjobdescription}</p>
                   </div>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#notice${notice.placementNoticeId}">
+                  <%-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#notice${notice.placementNoticeId}">
                     View Details
-                  </button>
+                  </button> --%>
+                  
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1" id="placesbtn" data-item="id=${notice.placementNoticeId}">
+  								View Details</button>
                   
                   
                   <!-- Modal -->
-                  <form action ="delete-placement-notice?id=${notice.placementNoticeId}" method="post">
-                  <div class="modal fade" id="notice${notice.placementNoticeId}" tabindex="-1" role="dialog" aria-labelledby="noticeid${notice.placementNoticeId}" aria-hidden="true">
+                  <form id="lineitem" action ="delete-placement-notice?id=${notice.placementNoticeId}" method="post">
+                  <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModal1label" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -175,14 +188,18 @@
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-<%--                           <a type="button" href="delete-placement-notice?id=${notice.placementNoticeId}" class="btn btn-danger" data-dismiss="modal">Delete</a>
- --%>                        
- 						<input type="submit" class="btn btn-danger" value="Delete" data-dismiss="modal">
+                       
+ 						<button type="submit"  class="btn btn-danger" >Delete</button>
 						 </div>
                       </div>
                     </div>
                   </div>
                   </form>
+                  
+                  
+                  
+                  
+                  
                 </div>
               </div>
 				</c:forEach>
@@ -380,8 +397,14 @@
   </div>
 
 </div>
+</div>
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  
+  
+  
+  
+  
   <script src="js/jquery-ui.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
