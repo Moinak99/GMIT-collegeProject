@@ -133,7 +133,7 @@
               <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
                   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    View All Notice
+                    View All Events
                   </button>
                 </h2>
               </div>
@@ -178,8 +178,11 @@
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 <%--                           <a type="button" href="delete-placement-notice?id=${notice.placementNoticeId}" class="btn btn-danger" data-dismiss="modal">Delete</a>
  --%>                        
- 						<a type="button" href="delete-event-admin?${event.eventId}&department=${event.organizeBy}" class="btn btn-danger" data-dismiss="modal">Delete</a>
- </div>
+<%--  						<a type="button" href="delete-event-admin?${event.eventId}&department=${event.organizeBy}" class="btn btn-danger" data-dismiss="modal">Delete</a>
+ --%> 
+ 					<button type="submit"  class="btn btn-danger" >Delete</button>
+ 							
+ 						</div>
                       </div>
                     </div>
                   </div>
@@ -347,6 +350,8 @@
                           View All
                         </button>
                         <!-- Modal -->
+                        
+                        
                         <div class="modal fade" id="event1" tabindex="-1" role="dialog" aria-labelledby="eventid1" aria-hidden="true">
                           <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
@@ -380,6 +385,7 @@
           </div>
   </div>
 
+</div>
 </div>
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
